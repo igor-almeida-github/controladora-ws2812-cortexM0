@@ -11,6 +11,8 @@
 #include "task.h"
 #include "stm32f0xx_hal.h"
 
+/* extern variables */
+extern SPI_HandleTypeDef hspi1;
 
 /* Task implementation */
 /**
@@ -21,6 +23,9 @@
  */
 void ws2812_task(void *parameters){
 	BaseType_t status;
+
+	uint32_t ws2812_led_byte = 0xF1ACAAAA;
+	HAL_SPI_Transmit_DMA(&hspi1, (uint8_t *)&ws2812_led_byte, 4);
 
 	/* Main loop */
 	while(1){
