@@ -4061,7 +4061,7 @@ LOAD /opt/st/stm32cubeide_1.6.0/plugins/com.st.stm32cube.ide.mcu.externaltools.g
  .igot.plt      0x0000000020000010        0x0 /opt/st/stm32cubeide_1.6.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v6-m/nofp/crtbegin.o
                 0x0000000020000010                . = ALIGN (0x4)
 
-.bss            0x0000000020000010      0x5f4 load address 0x000000000800357c
+.bss            0x0000000020000010      0x9dc load address 0x000000000800357c
                 0x0000000020000010                _sbss = .
                 0x0000000020000010                __bss_start__ = _sbss
  *(.bss)
@@ -4124,43 +4124,43 @@ LOAD /opt/st/stm32cubeide_1.6.0/plugins/com.st.stm32cube.ide.mcu.externaltools.g
                 0x0000000020000164        0x4 FreeRTOS/timers.o
  .bss.xLastTime.5512
                 0x0000000020000168        0x4 FreeRTOS/timers.o
- .bss.ucHeap    0x000000002000016c      0x3e8 FreeRTOS/portable/MemMang/heap_4.o
- .bss.xStart    0x0000000020000554        0x8 FreeRTOS/portable/MemMang/heap_4.o
- .bss.pxEnd     0x000000002000055c        0x4 FreeRTOS/portable/MemMang/heap_4.o
+ .bss.ucHeap    0x000000002000016c      0x7d0 FreeRTOS/portable/MemMang/heap_4.o
+ .bss.xStart    0x000000002000093c        0x8 FreeRTOS/portable/MemMang/heap_4.o
+ .bss.pxEnd     0x0000000020000944        0x4 FreeRTOS/portable/MemMang/heap_4.o
  .bss.xFreeBytesRemaining
-                0x0000000020000560        0x4 FreeRTOS/portable/MemMang/heap_4.o
+                0x0000000020000948        0x4 FreeRTOS/portable/MemMang/heap_4.o
  .bss.xMinimumEverFreeBytesRemaining
-                0x0000000020000564        0x4 FreeRTOS/portable/MemMang/heap_4.o
+                0x000000002000094c        0x4 FreeRTOS/portable/MemMang/heap_4.o
  .bss.xNumberOfSuccessfulAllocations
-                0x0000000020000568        0x4 FreeRTOS/portable/MemMang/heap_4.o
+                0x0000000020000950        0x4 FreeRTOS/portable/MemMang/heap_4.o
  .bss.xNumberOfSuccessfulFrees
-                0x000000002000056c        0x4 FreeRTOS/portable/MemMang/heap_4.o
+                0x0000000020000954        0x4 FreeRTOS/portable/MemMang/heap_4.o
  .bss.xBlockAllocatedBit
-                0x0000000020000570        0x4 FreeRTOS/portable/MemMang/heap_4.o
+                0x0000000020000958        0x4 FreeRTOS/portable/MemMang/heap_4.o
  *(COMMON)
- COMMON         0x0000000020000574        0x4 Core/Src/main.o
-                0x0000000020000574                ws2812_task_handle
- COMMON         0x0000000020000578       0x48 Core/Src/stm32f0xx_hal_timebase_tim.o
-                0x0000000020000578                htim14
- COMMON         0x00000000200005c0        0x4 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
-                0x00000000200005c0                uwTick
- COMMON         0x00000000200005c4       0x40 FreeRTOS/queue.o
-                0x00000000200005c4                xQueueRegistry
-                0x0000000020000604                . = ALIGN (0x4)
-                0x0000000020000604                _ebss = .
-                0x0000000020000604                __bss_end__ = _ebss
+ COMMON         0x000000002000095c        0x4 Core/Src/main.o
+                0x000000002000095c                ws2812_task_handle
+ COMMON         0x0000000020000960       0x48 Core/Src/stm32f0xx_hal_timebase_tim.o
+                0x0000000020000960                htim14
+ COMMON         0x00000000200009a8        0x4 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o
+                0x00000000200009a8                uwTick
+ COMMON         0x00000000200009ac       0x40 FreeRTOS/queue.o
+                0x00000000200009ac                xQueueRegistry
+                0x00000000200009ec                . = ALIGN (0x4)
+                0x00000000200009ec                _ebss = .
+                0x00000000200009ec                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020000604      0x604 load address 0x000000000800357c
-                0x0000000020000608                . = ALIGN (0x8)
- *fill*         0x0000000020000604        0x4 
+                0x00000000200009ec      0x604 load address 0x000000000800357c
+                0x00000000200009f0                . = ALIGN (0x8)
+ *fill*         0x00000000200009ec        0x4 
                 [!provide]                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x0000000020000808                . = (. + _Min_Heap_Size)
- *fill*         0x0000000020000608      0x200 
-                0x0000000020000c08                . = (. + _Min_Stack_Size)
- *fill*         0x0000000020000808      0x400 
-                0x0000000020000c08                . = ALIGN (0x8)
+                0x0000000020000bf0                . = (. + _Min_Heap_Size)
+ *fill*         0x00000000200009f0      0x200 
+                0x0000000020000ff0                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020000bf0      0x400 
+                0x0000000020000ff0                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)

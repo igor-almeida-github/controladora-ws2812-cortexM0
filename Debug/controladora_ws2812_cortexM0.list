@@ -21,9 +21,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, DATA
   8 .data         00000010  20000000  0800356c  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          000005f4  20000010  0800357c  00020010  2**2
+  9 .bss          000009dc  20000010  0800357c  00020010  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  20000604  0800357c  00020604  2**0
+ 10 ._user_heap_stack 00000604  200009ec  0800357c  000209ec  2**0
                   ALLOC
  11 .ARM.attributes 00000028  00000000  00000000  00020010  2**0
                   CONTENTS, READONLY
@@ -286,7 +286,7 @@ int main(void)
  8000252:	e7fe      	b.n	8000252 <main+0x32>
  8000254:	080034e0 	.word	0x080034e0
  8000258:	08000443 	.word	0x08000443
- 800025c:	20000574 	.word	0x20000574
+ 800025c:	2000095c 	.word	0x2000095c
 
 08000260 <SystemClock_Config>:
 /**
@@ -621,7 +621,7 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
  80003fe:	46c0      	nop			; (mov r8, r8)
  8000400:	40021000 	.word	0x40021000
  8000404:	000f4240 	.word	0x000f4240
- 8000408:	20000578 	.word	0x20000578
+ 8000408:	20000960 	.word	0x20000960
  800040c:	40002000 	.word	0x40002000
  8000410:	000003e7 	.word	0x000003e7
 
@@ -680,7 +680,7 @@ void TIM14_IRQHandler(void)
  800042e:	46bd      	mov	sp, r7
  8000430:	bd80      	pop	{r7, pc}
  8000432:	46c0      	nop			; (mov r8, r8)
- 8000434:	20000578 	.word	0x20000578
+ 8000434:	20000960 	.word	0x20000960
 
 08000438 <SystemInit>:
   * @brief  Setup the microcontroller system
@@ -813,7 +813,7 @@ LoopForever:
   ldr r2, =_sbss
  8000494:	20000010 	.word	0x20000010
   ldr r4, =_ebss
- 8000498:	20000604 	.word	0x20000604
+ 8000498:	200009ec 	.word	0x200009ec
 
 0800049c <ADC1_IRQHandler>:
  * @retval : None
@@ -889,7 +889,7 @@ __weak void HAL_IncTick(void)
  80004e0:	bd80      	pop	{r7, pc}
  80004e2:	46c0      	nop			; (mov r8, r8)
  80004e4:	20000004 	.word	0x20000004
- 80004e8:	200005c0 	.word	0x200005c0
+ 80004e8:	200009a8 	.word	0x200009a8
 
 080004ec <HAL_GetTick>:
   * @note   This function is declared as __weak  to be overwritten  in case of other 
@@ -908,7 +908,7 @@ __weak uint32_t HAL_GetTick(void)
  80004f6:	46bd      	mov	sp, r7
  80004f8:	bd80      	pop	{r7, pc}
  80004fa:	46c0      	nop			; (mov r8, r8)
- 80004fc:	200005c0 	.word	0x200005c0
+ 80004fc:	200009a8 	.word	0x200009a8
 
 08000500 <__NVIC_EnableIRQ>:
   \details Enables a device specific interrupt in the NVIC interrupt controller.
@@ -5787,7 +5787,7 @@ static BaseType_t prvIsQueueFull( const Queue_t * pxQueue )
  8001d42:	46bd      	mov	sp, r7
  8001d44:	b004      	add	sp, #16
  8001d46:	bd80      	pop	{r7, pc}
- 8001d48:	200005c4 	.word	0x200005c4
+ 8001d48:	200009ac 	.word	0x200009ac
 
 08001d4c <vQueueWaitForMessageRestricted>:
 #if ( configUSE_TIMERS == 1 )
@@ -10034,12 +10034,12 @@ void * pvPortMalloc( size_t xWantedSize )
  8003232:	46bd      	mov	sp, r7
  8003234:	b006      	add	sp, #24
  8003236:	bd80      	pop	{r7, pc}
- 8003238:	2000055c 	.word	0x2000055c
- 800323c:	20000570 	.word	0x20000570
- 8003240:	20000560 	.word	0x20000560
- 8003244:	20000554 	.word	0x20000554
- 8003248:	20000564 	.word	0x20000564
- 800324c:	20000568 	.word	0x20000568
+ 8003238:	20000944 	.word	0x20000944
+ 800323c:	20000958 	.word	0x20000958
+ 8003240:	20000948 	.word	0x20000948
+ 8003244:	2000093c 	.word	0x2000093c
+ 8003248:	2000094c 	.word	0x2000094c
+ 800324c:	20000950 	.word	0x20000950
 
 08003250 <vPortFree>:
 /*-----------------------------------------------------------*/
@@ -10154,9 +10154,9 @@ void vPortFree( void * pv )
  80032da:	46bd      	mov	sp, r7
  80032dc:	b004      	add	sp, #16
  80032de:	bd80      	pop	{r7, pc}
- 80032e0:	20000570 	.word	0x20000570
- 80032e4:	20000560 	.word	0x20000560
- 80032e8:	2000056c 	.word	0x2000056c
+ 80032e0:	20000958 	.word	0x20000958
+ 80032e4:	20000948 	.word	0x20000948
+ 80032e8:	20000954 	.word	0x20000954
 
 080032ec <prvHeapInit>:
     /* This just exists to keep the linker quiet. */
@@ -10173,7 +10173,7 @@ static void prvHeapInit( void ) /* PRIVILEGED_FUNCTION */
     size_t uxAddress;
     size_t xTotalHeapSize = configTOTAL_HEAP_SIZE;
  80032f2:	23fa      	movs	r3, #250	; 0xfa
- 80032f4:	009b      	lsls	r3, r3, #2
+ 80032f4:	00db      	lsls	r3, r3, #3
  80032f6:	60bb      	str	r3, [r7, #8]
 
     /* Ensure the heap starts on a correctly aligned boundary. */
@@ -10294,11 +10294,11 @@ static void prvHeapInit( void ) /* PRIVILEGED_FUNCTION */
  8003390:	bd80      	pop	{r7, pc}
  8003392:	46c0      	nop			; (mov r8, r8)
  8003394:	2000016c 	.word	0x2000016c
- 8003398:	20000554 	.word	0x20000554
- 800339c:	2000055c 	.word	0x2000055c
- 80033a0:	20000564 	.word	0x20000564
- 80033a4:	20000560 	.word	0x20000560
- 80033a8:	20000570 	.word	0x20000570
+ 8003398:	2000093c 	.word	0x2000093c
+ 800339c:	20000944 	.word	0x20000944
+ 80033a0:	2000094c 	.word	0x2000094c
+ 80033a4:	20000948 	.word	0x20000948
+ 80033a8:	20000958 	.word	0x20000958
 
 080033ac <prvInsertBlockIntoFreeList>:
 /*-----------------------------------------------------------*/
@@ -10443,8 +10443,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  800344e:	b004      	add	sp, #16
  8003450:	bd80      	pop	{r7, pc}
  8003452:	46c0      	nop			; (mov r8, r8)
- 8003454:	20000554 	.word	0x20000554
- 8003458:	2000055c 	.word	0x2000055c
+ 8003454:	2000093c 	.word	0x2000093c
+ 8003458:	20000944 	.word	0x20000944
 
 0800345c <__libc_init_array>:
  800345c:	b570      	push	{r4, r5, r6, lr}
