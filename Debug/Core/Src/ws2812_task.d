@@ -1,4 +1,14 @@
-Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
+Core/Src/ws2812_task.o: ../Core/Src/ws2812_task.c \
+ ../Core/Inc/ws2812_task.h \
+ /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/FreeRTOS.h \
+ /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/FreeRTOSConfig.h \
+ /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/projdefs.h \
+ /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/portable.h \
+ /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/deprecated_definitions.h \
+ /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/portable/GCC/ARM_CM0/portmacro.h \
+ /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/mpu_wrappers.h \
+ /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/task.h \
+ /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/list.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h \
  ../Core/Inc/stm32f0xx_hal_conf.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h \
@@ -25,19 +35,27 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h \
- ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h \
- /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/FreeRTOS.h \
- /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/FreeRTOSConfig.h \
- /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/projdefs.h \
- /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/portable.h \
- /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/deprecated_definitions.h \
- /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/portable/GCC/ARM_CM0/portmacro.h \
- /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/mpu_wrappers.h \
- /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/task.h \
- /home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/list.h \
- ../Core/Inc/ws2812_task.h
+ ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h
 
-../Core/Inc/main.h:
+../Core/Inc/ws2812_task.h:
+
+/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/FreeRTOS.h:
+
+/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/FreeRTOSConfig.h:
+
+/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/projdefs.h:
+
+/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/portable.h:
+
+/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/deprecated_definitions.h:
+
+/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/portable/GCC/ARM_CM0/portmacro.h:
+
+/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/mpu_wrappers.h:
+
+/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/task.h:
+
+/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/list.h:
 
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h:
 
@@ -92,23 +110,3 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h:
 
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h:
-
-/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/FreeRTOS.h:
-
-/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/FreeRTOSConfig.h:
-
-/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/projdefs.h:
-
-/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/portable.h:
-
-/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/deprecated_definitions.h:
-
-/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/portable/GCC/ARM_CM0/portmacro.h:
-
-/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/mpu_wrappers.h:
-
-/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/task.h:
-
-/home/igor/Documentos/ProjetoWS2812/controladora_ws2812_cortexM0/FreeRTOS/include/list.h:
-
-../Core/Inc/ws2812_task.h:

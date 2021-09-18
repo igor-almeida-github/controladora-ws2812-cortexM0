@@ -23,6 +23,16 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+/* STD includes */
+#include <stdint.h>
+
+/* FreeRTOS kernel includes */
+#include "FreeRTOS.h"
+#include "task.h"
+
+/* User files Includes */
+#include "ws2812_task.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -42,6 +52,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+
+/* FreeRTOS variables on global scope */
+TaskHandle_t ws2812_task_handle;
 
 /* USER CODE END PV */
 
@@ -63,6 +76,8 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+  /* FreeRTOS variables on local scope */
+  BaseType_t status;
 
   /* USER CODE END 1 */
 
@@ -84,6 +99,14 @@ int main(void)
 
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
+
+  /* --------------- FreeRTOS Task management --------------- */
+  /* Config. ws2812-task */
+  status = xTaskCreate(&ws2812_task, "ws2812-task", 100, NULL, 2, &ws2812_task_handle);
+  if(status != pdPASS) while(1);  // Traps the code if the above function returns an unexpected status
+
+  /* Start the freeRTOS scheduler */
+  vTaskStartScheduler();
 
   /* USER CODE END 2 */
 
