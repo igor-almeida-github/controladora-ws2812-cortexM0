@@ -110,7 +110,7 @@ int main(void)
 
   /* --------------- FreeRTOS Task management --------------- */
   /* Config. ws2812-task */
-  status = xTaskCreate(&ws2812_task, "ws2812-task", 100, NULL, 2, &ws2812_task_handle);
+  status = xTaskCreate(&ws2812_task, "ws2812-task", 50, NULL, 2, &ws2812_task_handle);
   if(status != pdPASS) while(1);  // Traps the code if the above function returns an unexpected status
 
   /* Start the freeRTOS scheduler */
@@ -236,6 +236,17 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi){
+	BaseType_t xHigherPriorityTaskWoken;
+	xHigherPriorityTaskWoken = pdFALSE;
+
+	/* Notify ws2812_task that the SPI DMA data transfer has completed */
+	xTaskNotifyFromISR(ws2812_task_handle, 0, eNoAction, &xHigherPriorityTaskWoken);
+
+	/* Launch the scheduler */
+	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
 
 /* USER CODE END 4 */
 
